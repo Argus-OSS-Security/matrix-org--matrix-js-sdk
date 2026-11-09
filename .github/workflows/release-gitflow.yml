@@ -1,21 +1,22 @@
 # Gitflow merge-back master->develop
 name: Merge master -> develop
-on:
-    push:
-        branches: [master]
-    workflow_call:
-        secrets:
-            ELEMENT_BOT_TOKEN:
-                required: true
-        inputs:
-            dependencies:
-                description: List of dependencies to reset.
-                type: string
-                required: false
-            dir:
-                description: The directory to release
-                type: string
-                default: "."
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     push:
+#         branches: [master]
+#     workflow_call:
+#         secrets:
+#             ELEMENT_BOT_TOKEN:
+#                 required: true
+#         inputs:
+#             dependencies:
+#                 description: List of dependencies to reset.
+#                 type: string
+#                 required: false
+#             dir:
+#                 description: The directory to release
+#                 type: string
+#                 default: "."
 concurrency: ${{ github.workflow }}
 permissions: {} # Uses ELEMENT_BOT_TOKEN
 jobs:

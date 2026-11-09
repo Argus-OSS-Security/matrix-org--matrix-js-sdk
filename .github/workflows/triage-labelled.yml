@@ -1,8 +1,9 @@
 name: Move labelled issues to correct projects
 
-on:
-    issues:
-        types: [labeled]
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     issues:
+#         types: [labeled]
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 jobs:
     call-triage-labelled:

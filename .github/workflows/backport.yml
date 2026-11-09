@@ -1,14 +1,15 @@
 name: Backport
-on:
-    # Privilege escalation necessary to enable backporting PRs from forks
-    # 🚨 We must not execute any checked out code here.
-    pull_request_target: # zizmor: ignore[dangerous-triggers]
-        types:
-            - closed
-            - labeled
-        branches:
-            - develop
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     # Privilege escalation necessary to enable backporting PRs from forks
+#     # 🚨 We must not execute any checked out code here.
+#     pull_request_target: # zizmor: ignore[dangerous-triggers]
+#         types:
+#             - closed
+#             - labeled
+#         branches:
+#             - develop
+# 
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 
 jobs:

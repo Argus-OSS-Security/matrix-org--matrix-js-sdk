@@ -3,10 +3,11 @@
 # also has a workflow dispatch trigger in case it needs running manually due
 # to failures / workflow updates etc.
 name: Release Drafter
-on:
-    push:
-        branches: [staging]
-    workflow_dispatch: {}
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     push:
+#         branches: [staging]
+#     workflow_dispatch: {}
 concurrency: ${{ github.workflow }}
 permissions: {}
 jobs:

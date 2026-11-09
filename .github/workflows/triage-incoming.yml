@@ -1,8 +1,9 @@
 name: Move new issues into Issue triage board
 
-on:
-    issues:
-        types: [opened]
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     issues:
+#         types: [opened]
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 jobs:
     automate-project-columns-next:

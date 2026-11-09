@@ -1,50 +1,51 @@
 name: Release Make
-on:
-    workflow_call:
-        secrets:
-            ELEMENT_BOT_TOKEN:
-                required: true
-            GPG_PASSPHRASE:
-                required: false
-            GPG_PRIVATE_KEY:
-                required: false
-        inputs:
-            final:
-                description: Make final release
-                required: true
-                default: false
-                type: boolean
-            npm:
-                description: Publish to npm
-                type: boolean
-                default: false
-            gpg-fingerprint:
-                description: Fingerprint of the GPG key to use for signing the git tag and assets, if any.
-                type: string
-                required: false
-            asset-path:
-                description: |
-                    The path to the asset you want to upload, if any. You can use glob patterns here.
-                    Will be GPG signed and an `.asc` file included in the release artifacts if `gpg-fingerprint` is set.
-                    Relative to `dir`.
-                type: string
-                required: false
-            expected-asset-count:
-                description: The number of expected assets, including signatures, excluding generated zip & tarball.
-                type: number
-                required: false
-            dist-dir:
-                description: The directory to release
-                type: string
-                default: "."
-            version-dirs:
-                description: Directories in which to update package.json `version` field
-                type: string
-                required: false
-        outputs:
-            npm-id:
-                description: "The npm package@version string we published"
-                value: ${{ jobs.npm.outputs.id }}
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     workflow_call:
+#         secrets:
+#             ELEMENT_BOT_TOKEN:
+#                 required: true
+#             GPG_PASSPHRASE:
+#                 required: false
+#             GPG_PRIVATE_KEY:
+#                 required: false
+#         inputs:
+#             final:
+#                 description: Make final release
+#                 required: true
+#                 default: false
+#                 type: boolean
+#             npm:
+#                 description: Publish to npm
+#                 type: boolean
+#                 default: false
+#             gpg-fingerprint:
+#                 description: Fingerprint of the GPG key to use for signing the git tag and assets, if any.
+#                 type: string
+#                 required: false
+#             asset-path:
+#                 description: |
+#                     The path to the asset you want to upload, if any. You can use glob patterns here.
+#                     Will be GPG signed and an `.asc` file included in the release artifacts if `gpg-fingerprint` is set.
+#                     Relative to `dir`.
+#                 type: string
+#                 required: false
+#             expected-asset-count:
+#                 description: The number of expected assets, including signatures, excluding generated zip & tarball.
+#                 type: number
+#                 required: false
+#             dist-dir:
+#                 description: The directory to release
+#                 type: string
+#                 default: "."
+#             version-dirs:
+#                 description: Directories in which to update package.json `version` field
+#                 type: string
+#                 required: false
+#         outputs:
+#             npm-id:
+#                 description: "The npm package@version string we published"
+#                 value: ${{ jobs.npm.outputs.id }}
 permissions: {}
 jobs:
     checks:

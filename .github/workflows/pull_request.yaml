@@ -1,16 +1,17 @@
 name: Pull Request
-on:
-    # Privilege escalation necessary access members of the review teams
-    # 🚨 We must not execute any checked out code here, and be careful around use of user-controlled inputs.
-    # FIXME: only `community-prs` job needs this privilege, so it should be in its own workflow file.
-    pull_request_target: # zizmor: ignore[dangerous-triggers]
-        types: [opened, edited, labeled, unlabeled, synchronize]
-    merge_group:
-        types: [checks_requested]
-    workflow_call:
-        secrets:
-            ELEMENT_BOT_TOKEN:
-                required: true
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     # Privilege escalation necessary access members of the review teams
+#     # 🚨 We must not execute any checked out code here, and be careful around use of user-controlled inputs.
+#     # FIXME: only `community-prs` job needs this privilege, so it should be in its own workflow file.
+#     pull_request_target: # zizmor: ignore[dangerous-triggers]
+#         types: [opened, edited, labeled, unlabeled, synchronize]
+#     merge_group:
+#         types: [checks_requested]
+#     workflow_call:
+#         secrets:
+#             ELEMENT_BOT_TOKEN:
+#                 required: true
 concurrency: ${{ github.workflow }}-${{ github.event.pull_request.head.ref || github.head_ref || github.ref }}
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 jobs:

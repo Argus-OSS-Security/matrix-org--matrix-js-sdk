@@ -1,16 +1,17 @@
 name: Release Sanity checks
-on:
-    workflow_call:
-        secrets:
-            ELEMENT_BOT_TOKEN:
-                required: false
-        inputs:
-            repository:
-                type: string
-                required: false
-                default: ${{ github.repository }}
-                description: "The repository (in form owner/repo) to check for release blockers"
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     workflow_call:
+#         secrets:
+#             ELEMENT_BOT_TOKEN:
+#                 required: false
+#         inputs:
+#             repository:
+#                 type: string
+#                 required: false
+#                 default: ${{ github.repository }}
+#                 description: "The repository (in form owner/repo) to check for release blockers"
+# 
 permissions: {}
 jobs:
     checks:

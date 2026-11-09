@@ -1,12 +1,13 @@
 name: Deploy documentation PR preview
 
-on:
-    # Privilege escalation necessary to publish to Netlify
-    # 🚨 We must not execute any checked out code here.
-    workflow_run: # zizmor: ignore[dangerous-triggers]
-        workflows: ["Static Analysis"]
-        types:
-            - completed
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     # Privilege escalation necessary to publish to Netlify
+#     # 🚨 We must not execute any checked out code here.
+#     workflow_run: # zizmor: ignore[dangerous-triggers]
+#         workflows: ["Static Analysis"]
+#         types:
+#             - completed
 permissions: {}
 jobs:
     netlify:

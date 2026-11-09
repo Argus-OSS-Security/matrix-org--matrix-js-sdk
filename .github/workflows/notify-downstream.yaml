@@ -1,7 +1,8 @@
 name: Notify Downstream Projects
-on:
-    push:
-        branches: [develop]
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     push:
+#         branches: [develop]
 concurrency: ${{ github.workflow }}-${{ github.ref }}
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 jobs:

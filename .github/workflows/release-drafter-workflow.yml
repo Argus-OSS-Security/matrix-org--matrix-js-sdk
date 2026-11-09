@@ -1,12 +1,13 @@
 # Workflow used by other workflows to generate draft releases.
 name: Release Drafter Reusable
-on:
-    workflow_call:
-        inputs:
-            include-changes:
-                description: Project to include changelog entries from in this release.
-                type: string
-                required: false
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     workflow_call:
+#         inputs:
+#             include-changes:
+#                 description: Project to include changelog entries from in this release.
+#                 type: string
+#                 required: false
 concurrency: release-drafter-action
 permissions: {}
 jobs:

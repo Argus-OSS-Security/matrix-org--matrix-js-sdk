@@ -1,13 +1,14 @@
 name: Sync labels
-on:
-    workflow_dispatch: {}
-    schedule:
-        - cron: "0 1 * * *" # 1am every day
-    push:
-        branches:
-            - develop
-        paths:
-            - .github/labels.yml
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#     workflow_dispatch: {}
+#     schedule:
+#         - cron: "0 1 * * *" # 1am every day
+#     push:
+#         branches:
+#             - develop
+#         paths:
+#             - .github/labels.yml
 permissions: {} # We use ELEMENT_BOT_TOKEN instead
 jobs:
     sync-labels:
